@@ -56,10 +56,18 @@ const setup = async () => {
 const apply = async () => {
     const setup2Error = document.getElementById('setup2-error');
     const ssidSelect = document.getElementById('ssid-select');
+    const nameElement = document.getElementById('name');
     const passwordElement = document.getElementById('password');
 
+    const name = nameElement.value;
     const ssid = ssidSelect.value;
     const password = passwordElement.value;
+
+    if (name == '' || name == undefined) {
+        setup2Error.innerHTML = 'name not found';
+        setup2Error.style.display = 'block';
+        return ;
+    }
 
     if (ssid == '' || ssid == undefined) {
         setup2Error.innerHTML = 'SSID not found';
@@ -81,6 +89,7 @@ const apply = async () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
+                name: name,
                 ssid: ssid,
                 password: password
             }),
