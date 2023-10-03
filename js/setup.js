@@ -19,7 +19,7 @@ const setup = async () => {
     let request = undefined;
 
     try {
-        request = await fetch('http://192.168.1.1/app/wifi/list', { signal: AbortSignal.timeout(5000) });
+        request = await fetch('http://192.168.1.1:9000/app/wifi/list', { signal: AbortSignal.timeout(5000) });
     } catch (e) {
         console.error(e);
     }
