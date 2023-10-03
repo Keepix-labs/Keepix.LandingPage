@@ -83,7 +83,7 @@ const apply = async () => {
     let request = undefined;
 
     try {
-        request = await fetch('http://192.168.1.1/app/wifi', {
+        request = await fetch('http://192.168.1.1:9000/app/wifi', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
