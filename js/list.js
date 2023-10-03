@@ -3,7 +3,7 @@ const main = () => {
 
     for (let i = 20; i < 101; i++) {
         try {
-            fetch(`http://192.168.1.${i}/app`, { signal: AbortSignal.timeout(5000) }).then((request) => {
+            fetch(`http://192.168.1.${i}:9000/app`, { signal: AbortSignal.timeout(5000) }).then((request) => {
                 if (request.status == 200) {
 
                     const keepixDiv = document.createElement('div');
